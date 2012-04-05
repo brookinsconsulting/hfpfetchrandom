@@ -154,7 +154,7 @@ class hfpFetchRandom extends eZContentObjectTreeNode
 		$ini = eZINI::instance();
         $databaseImplementation = $ini->variable( 'DatabaseSettings', 'DatabaseImplementation' );
                 
-        if ( $databaseImplementation == "ezmysql" )
+        if ( $databaseImplementation == "ezmysql" || $databaseImplementation == "ezmysqli" )
             $query .= " ORDER BY RAND()";
         elseif( $databaseImplementation == "ezpostgresql" )
  			$query .= " ORDER BY RANDOM()";
