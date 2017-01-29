@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>Hfp Fetch Random</name>
+        <version>0.2.0</version>
+        <copyright>Copyright (C) 1999 - 2017 Brookins Consulting and LIU Bin</copyright>
+        <license>GNU General Public License</license>
+        <info_url>http://github.com/brookinsconsulting/hfpfetchrandom</info_url>
+    </metadata>
+</software>

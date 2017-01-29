@@ -1,0 +1,24 @@
+{
+    "name": "brookinsconsulting/hfpfetchrandom",
+    "description": "eZ Publish Legacy custom content fetch module extension which provides a stable and flexible solution which allows for fetching of randomized content tree node objects. Provides for randomized content tree node fetch results!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "random", "content", "tree", "node", "fetch", "randomized", "randomizer" ],
+    "homepage": "https://github.com/brookinsconsulting/hfpfetchrandom",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name" : "Brookins Consulting",
+            "homepage": "http://brookinsconsulting.com",
+            "email": "info@brookinsconsulting.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "ezsystems/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "hfpfetchrandom"
+    }
+}
