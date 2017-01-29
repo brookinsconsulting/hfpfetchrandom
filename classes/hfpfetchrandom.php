@@ -27,7 +27,7 @@ class hfpFetchRandom extends eZContentObjectTreeNode
                              'ClassFilterArray'         => false,
                              'GroupBy'                  => false );
         }
-		
+
         $offset           = ( isset( $params['Offset'] ) && is_numeric( $params['Offset'] ) ) ? $params['Offset']             : false;
         //$onlyTranslated   = ( isset( $params['OnlyTranslated']      ) )                       ? $params['OnlyTranslated']     : false;
         $language         = ( isset( $params['Language']      ) )                             ? $params['Language']           : false;
@@ -45,9 +45,9 @@ class hfpFetchRandom extends eZContentObjectTreeNode
         {
             $offset = abs( $offset );
         }
-        
+
         $params['SortBy'] = false;
-        
+
         if ( !isset( $params['ClassFilterType'] ) )
             $params['ClassFilterType'] = false;
 
@@ -117,6 +117,7 @@ class hfpFetchRandom extends eZContentObjectTreeNode
 
         $query = "SELECT DISTINCT
                        ezcontentobject.*,
+                       ezcontentobject.remote_id AS object_remote_id,
                        ezcontentobject_tree.*,
                        ezcontentclass.serialized_name_list as class_serialized_name_list,
                        ezcontentclass.identifier as class_identifier,
@@ -150,10 +151,10 @@ class hfpFetchRandom extends eZContentObjectTreeNode
                       $objectNameFilterSQL
                       $languageFilter
                 $groupByText";
-                
+
 		$ini = eZINI::instance();
         $databaseImplementation = $ini->variable( 'DatabaseSettings', 'DatabaseImplementation' );
-                
+
         if ( $databaseImplementation == "ezmysql" || $databaseImplementation == "ezmysqli" )
             $query .= " ORDER BY RAND()";
         elseif( $databaseImplementation == "ezpostgresql" )
@@ -186,7 +187,7 @@ class hfpFetchRandom extends eZContentObjectTreeNode
 
         return $retNodeList;
     }
-	
+
 }
 
 ?>
